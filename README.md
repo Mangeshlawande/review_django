@@ -48,3 +48,42 @@ user -- request --> urls.py --> views.py --> templates/html files --- response -
 7. {%load static%} --> to load static files in html files.
 8. {% static 'path/to/static/file' %} --> to refer static files in html files.
 
+---------------- EP -03--------------------
+#### Jinja2 and Django apps 
+1. Jinja2 is a templating engine for python.
+2. Django uses its own templating engine by default but you can also use Jinja2 with django.
+3. To use Jinja2 with django you need to install Jinja2 package
+   >> pip install Jinja2
+4. Configure settings.py to use Jinja2 as templating engine.
+5. Create a folder named 'jinja2' in your app folder to store jinja2 templates.
+6. In settings.py add the following code to configure Jinja2 templating engine
+   TEMPLATES = [
+       {
+           'BACKEND': 'django.template.backends.jinja2.Jinja2',
+           'DIRS': [os.path.join(BASE_DIR, 'your_app/jinja2')],
+           'APP_DIRS': True,
+           'OPTIONS': {
+               'environment': 'your_app.jinja2.environment',
+           },
+       },
+   ]
+7. Create a file named 'jinja2.py' in your app folder to configure Jinja2 environment.
+8. In jinja2.py add the following code
+   from jinja2 import Environment, FileSystemLoader
+   import os
+
+   **createapp**
+   >>python manage.py startapp your_app
+   It gives some default files and folders to work with django.
+   You can create multiple apps in a single django project for better code management.
+   1.django only make this app not install it in project.
+   2. to install app in project you need to add app name in settings.py file
+   INSTALLED_APPS = [
+       ...
+       'your_app',
+       ...
+   ]
+   
+   in app make explicit urls.py
+    from django.urls import path
+    pass controller from main project urls.py to app urls.py
