@@ -30,3 +30,21 @@
     12. urls.py --> files in django decides which urls should be mapped which which view functions.
 
 ---------------- EP -02--------------------
+#### Templates and Errors in Django
+
+
+**Logical Structure :**
+
+user -- request --> urls.py --> views.py --> templates/html files --- response --> user
+
+1. create views.py  
+2. Handles Urls in urls.py
+3. Create templates folder in root app folder
+4. Create static folder in root app folder
+5. Configure settings.py for templates and static files.
+6. templating Engine in django to render dynamic data in html files. 
+ html file is works as template engine means you can inject dynamic data in html files using django template tags. 
+    syntax --> {{ variable_name }}
+7. {%load static%} --> to load static files in html files.
+8. {% static 'path/to/static/file' %} --> to refer static files in html files.
+
