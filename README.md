@@ -115,3 +115,14 @@ django_browser_reload
 In settings.py add :++:
 middleware :++: 'django_browser_reload.middleware.BrowserReloadMiddleware',
 urls.py :++: path("__reload__/", include("django_browser_reload.urls")),
+
+Django Admin panel: 
+migrations talk with databases 
+>> python manage.py migrate
+after this you can access admin panel
+
+Create superuser to access admin panel
+>> python manage.py createsuperuser
+provide username , email , password
+Access admin panel at
+>> localhost:8000/admin
