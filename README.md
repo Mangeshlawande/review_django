@@ -87,3 +87,21 @@ user -- request --> urls.py --> views.py --> templates/html files --- response -
    in app make explicit urls.py
     from django.urls import path
     pass controller from main project urls.py to app urls.py
+
+
+---------------- EP 04 --------------------
+
+#### How to add tailwind in django and super user 
+>> pip install 'django-tailwind[reload]'
+add 'tailwind' in settings.py
+>> python manage.py tailwind init
+add theme in settings.py (INSTALLED_APPS)
+
+TAILWIND_APP_NAME = 'theme'
+INTERNAL_IPS = ["127.0.0.1"]
+>> python manage.py tailwind install
+
+**Run 1 more terminal to run tailwind css**
+NPM_BIN_PATH=$(npm bin) \ (NO NEED TO GIVE )STANDALONE INSTALL 
+
+>> python manage.py tailwind start
