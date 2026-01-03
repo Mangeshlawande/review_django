@@ -126,3 +126,43 @@ Create superuser to access admin panel
 provide username , email , password
 Access admin panel at
 >> localhost:8000/admin
+
+---------------- EP 05 --------------------
+#### Django Forms and Model Forms
+1. Django forms are used to handle user input and validation.
+2. Create a forms.py file in your app folder to define your forms.
+3. In forms.py import forms from django
+   from django import forms
+4. Create a form class by inheriting from forms.Form or forms.ModelForm
+5. Define form fields using form field classes like CharField, EmailField, etc.
+6. In views.py import the form class and create an instance of the form.
+7. Pass the form instance to the template context to render the form in html.
+8. In the template use {{ form.as_p }} to render the form fields as paragraphs.
+9. Handle form submission in views.py by checking if the request method is POST.
+10. Validate the form using form.is_valid() method and process the form data.
+11. For Model Forms, define a model in models.py and create a ModelForm class in forms.py
+12. In the ModelForm class, define a Meta class to specify the model and fields to include.
+13. Model Forms automatically handle saving data to the database when form.save() is called.
+14. Use Model Forms in views.py similar to regular forms for rendering and processing user input.
+
+reset django password
+>> python manage.py changepassword username
+
+for image config in settings.py
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')    
+
+add static and media in urls.py
+from django.conf import settings
+from django.conf.urls.static import static  
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)    
+
+>> python manage.py makemigrations
+>> python manage.py migrate
+
+add models in admin.py to see in admin panel
+from .models import YourModel
+admin.site.register(YourModel)
+
+add 1 view to show data from model in views.py
