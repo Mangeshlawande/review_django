@@ -105,3 +105,13 @@ INTERNAL_IPS = ["127.0.0.1"]
 NPM_BIN_PATH=$(npm bin) \ (NO NEED TO GIVE )STANDALONE INSTALL 
 
 >> python manage.py tailwind start
+*In production*
+>> python manage.py tailwind build
+
+Hot reload accessible configuration 
+add :++: Installed app :: 
+django_browser_reload
+>> pip install django_browser_reload
+In settings.py add :++:
+middleware :++: 'django_browser_reload.middleware.BrowserReloadMiddleware',
+urls.py :++: path("__reload__/", include("django_browser_reload.urls")),
